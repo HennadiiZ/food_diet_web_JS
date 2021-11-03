@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHOLE_FOOD_SITE</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+
+<div class="wrapper">
+
+    <div class="header">
+        <div class="container">
+              <div class="header__wrapper">
+                  <div class="header__logo">LOGO</div>
+
+                    <div class="header__buttons">
+                        <nav class="header__nav">
+                            <a href="#">Offer</a>
+                            <a href="#">Menu</a>
+                        </nav>
+                        <button data-modal class="header__button button btn btn_white">Contact us</button>
+                    </div>
+
+              </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="tab">
+            <div class="container">
+                <!-- <div class="tab__wrapper"> -->
+                    <div class="tabcontainer">  
+
+                        <div class="tabcontent">
+                            <img src="img/tabs/vegy.jpg" alt="vegy" >
+                            <div class="tabcontent__descr">
+                                The Fitness menu is a new approach to cooking: more fresh vegetables and fruits. For people who are interested in sports; active and healthy. This is a completely new product with an optimal price and high quality!
+                            </div>
+                        </div>
+                        <div class="tabcontent">
+                            <img src="img/tabs/elite.jpg" alt="elite" >
+                            <div class="tabcontent__descr">
+                                Menu "Premium" - we use not only beautiful packaging design, but also high-quality execution of dishes. Red fish, seafood, fruits - restaurant menu without going to the restaurant!                                    
+                            </div>
+                        </div>
+                        <div class="tabcontent">
+                            <img src="img/tabs/post.jpg" alt="post" >
+                            <div class="tabcontent__descr">
+                                Our special “Lenten Menu” is a careful selection of ingredients: no animal products. Complete harmony with yourself and nature in every element! Everything will be Omh!
+                            </div>
+                        </div>
+                        <div class="tabcontent">
+                            <img src="img/tabs/vegy.jpg" alt="vegy" >
+                            <div class="tabcontent__descr">
+                                The "Balanced" menu is your diet according to all scientific recommendations. We carefully calculate your need for to / b / w / y and create the best dishes for you.
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="tabheader">
+                                <h3>Choose your diet</h3>
+                                <div class="tabheader__items">
+                                        <div class="tabheader__item tabheader__item_active">Fitness</div>
+                                        <div class="tabheader__item">Premium</div>
+                                        <div class="tabheader__item">Lenten</div>
+                                        <div class="tabheader__item">Balanced</div>
+                                </div>
+                        </div>
+                </div>
+            </div>    
+        </div>
+
+
+        <div class="devider"></div>
+
+
+        <div class="offer">
+            <div class="container">
+                <div class="offer__wrapper">
+
+                    <div class="offer__text">
+                        <h1>What can we offer you?</h1>
+                        <p>Our main idea is proper nutrition. It can be simple and delicious. We are not just a delivery, we are a service! We took care of all the calculations of the BJU, calorie content, portion sizes and other important but boring aspects. All you have to do is healthy, satisfying and proper food, which we bring right under the door.</p>
+                    </div>
+
+                    <div class="offer__btn">
+                        <button data-modal class="header__button button btn btn_black">Contact us</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="offer__advantages">
+            <div class="container">
+                <div class="offer__advantages_container">
+                    <div class="offer__advantages_text">
+                        <div class="offer__text_one">
+                            <h3>Fast and healthy</h3>
+                            <p>Cooking at home takes a lot of effort, time and nerves. We bring food immediately for the whole day, and you can act as you like, without adjusting to anyone and being confident in the quality of the product!</p>
+                        </div>
+                        <div class="offer__text_two">
+                            <h3>Correct diet</h3>
+                            <p>We have developed a special menu, which takes into account all the nuances of proper nutrition, from the balance of BJU to their preparation and crushing the diet.</p>
+                        </div>
+                    </div>
+    
+                    <div class="offer__advantages_image">
+                        <div class="offer__image">
+
+                            <!-- <div class="offer__slider-prev">
+                                <img src="icons/left.svg" alt="prev">
+                            </div> -->
+                            <div class="span">
+                                <span class="current">03</span>
+
+                                <span class="total">04</span>
+                            </div>
+                     
+                            <!-- <div class="offer__slider-next">
+                                <img src="icons/right.svg" alt="next">
+                            </div> -->
+                            <div class="offer__image_image offer__slide">
+                                <img src="img/slider/pepper.jpg" alt="">
+                            </div>
+                            <div class="offer__image_image offer__slide">
+                                <img src="img/slider/paprika.jpg" alt="">
+                            </div>
+                            <div class="offer__image_image offer__slide">
+                                <img src="img/slider/olive-oil.jpg" alt="">
+                            </div>
+                            <div class="offer__image_image offer__slide">
+                                <img src="img/slider/paprika.jpg" alt="">
+                            </div>
+                   
+
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+
+        <div class="devider"></div>
+
+        <div class="calculator">
+            <div class="container">
+                <div class="calculator__wrapper">
+                    <div class="calculator__title">
+                        <h2>Let's calculate your calorie requirement!</h2>
+                    </div>
+
+                    <h3>Your gender:</h3>
+                    <div class="calculator__line_one calculating__choose calculating__choose_small" id="gender">
+                        <button id="female" class="calculating__choose-item calculating__choose-item_active">Female</button>
+                        <button id="male" class="calculating__choose-item">Male</button>
+                    </div>
+
+                    <h3>Your body Constitution:</h3>
+                    <div class="calculator__line_two calculating__choose calculating__choose_medium">
+                        <input type='text' placeholder='Your height' id="height" class="calculating__choose-item">
+                        <input type='text' placeholder='Your weight' id="weight" class="calculating__choose-item">
+                        <input type='text' placeholder='Your age' id="age" class="calculating__choose-item">
+                    </div>
+
+                    <h3>Choose your level of physical activity:</h3>
+                    <div class="calculator__line_three calculating__choose calculating__choose_big">
+                        <button data-ratio='1.2'  id="low" class="calculating__choose-item">Very low physical activity</button>
+                        <button data-ratio='1.375' id="small"  class="calculating__choose-item calculating__choose-item_active">Low physical activity</button>
+                        <button data-ratio='1.55' id="medium" class="calculating__choose-item">Medium physical activity</button>
+                        <button data-ratio='1.725' id="high" class="calculating__choose-item">High physical activity</button>
+                    </div>
+
+               
+
+                    <div class="calculator__result">
+                        <h3>Your daily calorie intake:<span>2700</span>calories </h3>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="devider"></div>
+
+        <div class="daily__menu">
+            <h2>Our daily menu</h2>
+        </div>
+
+        <div class="cards menu">
+            <div class="container">
+                <div class="cards__wrapper">
+
+                    <!-- <div class="card__one menu__item">
+                        <div class="card__image">
+                            <img src="img/tabs/vegy.jpg" alt="" >
+                        </div>
+                        <div class="card__info">
+                            <h3 class="menu__item-subtitle">Меню "Фитнес"</h3>
+                            <p class="menu__item-descr">Меню "Фитнес" - это новы Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi voluptate, repudiandae velit, rerum magnam quo harum itaque et tempora sint voluptatum quam sapiente animi accusamus doloribus recusandae beatae nihil aspernatur. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi voluptate, repudiandae velit, rerum magnam quo harum itaque et tempora sint voluptatum quam sapiente animi accusamus doloribus recusandae beatae nihil aspernatur.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi voluptate, repudiandae velit, rerum magnam quo harum itaque et tempora sint voluptatum quam sapiente animi accusamus doloribus recusandae beatae nihil aspernatur.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi voluptate, repudiandae velit, rerum magnam quo harum itaque et tempora sint voluptatum quam sapiente animi accusamus doloribus recusandae beatae nihil aspernatur.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi voluptate, repudiandae velit, rerum magnam quo harum itaque et tempora sint voluptatum quam sapiente animi accusamus doloribus recusandae beatae nihil aspernatur.</p>
+                        </div>
+                        <div class="card__price menu__item-price">
+                            <p class="menu__item-cost">price: </p>
+                            <p class="menu__item-total"><span>229</span> грн/день</p>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="card__one menu__item">
+                        <div class="card__image">
+                            <img src="img/tabs/vegy.jpg" alt="" >
+                        </div>
+                        <div class="card__info">
+                            <h3 class="menu__item-subtitle">Меню "Фитнес"</h3>
+                            <p class="menu__item-descr">Меню "Фитнес" - это новы</p>
+                        </div>
+                        <div class="card__price menu__item-price">
+                            <p class="menu__item-cost">price: </p>
+                            <p class="menu__item-total"><span>229</span> грн/день</p>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="card__one menu__item">
+                        <div class="card__image">
+                            <img src="img/tabs/vegy.jpg" alt="" >
+                        </div>
+                        <div class="card__info">
+                            <h3 class="menu__item-subtitle">Меню "Фитнес"</h3>
+                            <p class="menu__item-descr">Меню "Фитнес" - это новы</p>
+                        </div>
+                        <div class="card__price menu__item-price">
+                            <p class="menu__item-cost">price: </p>
+                            <p class="menu__item-total"><span>229</span> грн/день</p>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="devider"></div> -->
+
+        <div class="order">
+             <div class="container">
+                 <div class="order__wrapper">
+                     <div class="order__title">
+                        <h2>Book your trial day now!</h2>
+                     </div>
+                     <div class="order__content">
+                         <form  action="#" class="order__form order__content_form">
+                             <input required placeholder="Your name" name="name" type="text" class="order__input">
+                             <input required placeholder="Your phone" name="phone" type="phone" class="order__input">
+                             <button class="btn btn_dark btn_min" type="submit">call me</button>
+                         </form>
+                     </div>
+                 </div>
+             </div>
+        </div>
+
+        <!-- <div class="devider"></div> -->
+   
+        <div class="promotion">
+            <div class="container">
+                <div class="promotion__wrapper">
+
+                        <div class="promotion__descr">
+                            <h3>Promotion for new customers!</h3>
+                            <p>
+                                We value each client and invite you to become one of them on very favorable terms. Everyone who orders food delivery for a week will receive a 20% discount!</p>
+                            <p>The promotion will end on May 20 at 00:00</p>
+                        </div>
+
+                        <div class="promotion__timer">
+                              <div class="promotion__timer_title">Time remaining:</div>
+                              <div class="promotion__timer_blocks  timer">
+
+                                     <div class="promotion__timer_block timer__block">
+                                        <div><span id="days">12</span></div> 
+                                        <div>days</div>
+                                     </div>
+                                     <div class="promotion__timer_block timer__block">
+                                        <div><span id="hours">12</span></div> 
+                                        <div>hours</div>
+                                     </div>
+                                     <div class="promotion__timer_block timer__block">
+                                        <div><span id="minutes">12</span></div> 
+                                        <div>minutes</div>
+                                     </div>
+                                     <div class="promotion__timer_block timer__block">
+                                        <div><span id="seconds">12</span></div> 
+                                        <div>seconds</div>
+                                     </div>
+
+                              </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="devider"></div> -->
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__social">
+                    <h3>Our social networks:</h3>
+                    <a href="#" class="link">instagram</a>
+                    <a href="#" class="link">facebook</a>
+                </div>
+                <div class="footer__logo">
+                </div>
+                <div class="footer__phone">
+                    <h3>Or call us:</h3>
+                    <a href="#" class="link">+380678341034</a>
+                    <a href="#" class="link">+380500941356</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="devider"></div> -->
+
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <form action="#"  class="modal__form">
+                    <div data-close class="modal__close">&times;</div>
+                    <div  class="modal__title">Мы свяжемся с вами как можно быстрее!</div>
+                    <input required  type="text" class="modal__name modal__input" name='name' placeholder="your name">
+                    <input required  type="phone" class="modal__phone modal__input" name='phone' placeholder="your phone">
+                    <button type="submit" name='btn'class="modal__button btn btn_dark btn_min">call me</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
