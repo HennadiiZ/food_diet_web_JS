@@ -51,4 +51,5 @@ function timer(){
             }
         }
 }
-module.exports = timer;
+// module.exports = timer;
+export default timer;

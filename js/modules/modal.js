@@ -152,4 +152,5 @@ fetch('db.json')  // ЭРРОР!!
 
 
 
-module.exports = modal;
+// module.exports = modal;
+export default modal;
