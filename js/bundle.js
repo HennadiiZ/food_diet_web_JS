@@ -194,67 +194,26 @@ function cards(){
 
 /***/ }),
 
-/***/ "./js/modules/modal.js":
-/*!*****************************!*\
-  !*** ./js/modules/modal.js ***!
-  \*****************************/
+/***/ "./js/modules/form.js":
+/*!****************************!*\
+  !*** ./js/modules/form.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function modal(){
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal */ "./js/modules/modal.js");
 
-    // modal - 6
-        const btns = document.querySelectorAll('[data-modal]');
-        const modal = document.querySelector('.modal');
-        const modalCloseBtn = document.querySelector('[data-close]');
-        
-        function modalOpen(){
-            modal.classList.add('show');
-            modal.classList.remove('hide');
-            document.body.style.overflow = 'hidden';
-            clearInterval(modalShowUp)
-        }
-        
-        function modalClose(){
-            modal.classList.add('hide');
-            modal.classList.remove('show');
-            document.body.style.overflow = '';
-        }
-        btns.forEach((btn, i)=>{
-            btn.addEventListener('click',()=>{
-                modalOpen()
-            })
-        });
-        modalCloseBtn.addEventListener('click',()=>{
-            modalClose()
-        })
-        modal.addEventListener('click',(e)=>{
-            if(e.target.classList.contains('modal')){
-                modalClose()
-            }
-        })
-        document.addEventListener('keydown',(e)=>{
-            if(e.code === 'Escape'){
-                modalClose()
-            }
-        });
-        const modalShowUp = setTimeout(modalOpen, 9000);
-        window.addEventListener('scroll', endScrollShowUp);
-        function endScrollShowUp(){
-            if(window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight){
-                modalOpen();
-                window.removeEventListener('scroll', endScrollShowUp);
-            }
-        }
-        
-        // + post form
 
-              
-//post form - 7  fetch
-const forms = document.querySelectorAll('form');
+
+
+
+
+function form(formSelector, modalShowUp){               
+
+const forms = document.querySelectorAll(formSelector);
 forms.forEach(i=>{
     bindPostData(i)
 })
@@ -263,7 +222,6 @@ const message = {
     success: 'Success! Thank You',
     failure: 'Something went wrong...'
 };
-// async/ await
 const postData = async (url, data) => {
     const result = await fetch(url, {
         method: 'POST',
@@ -272,7 +230,7 @@ const postData = async (url, data) => {
         },
         body: data
     });
-    return await result.json(); // it's a promise
+    return await result.json(); 
 }
 function bindPostData(form){
 
@@ -287,27 +245,9 @@ function bindPostData(form){
          `;
          form.insertAdjacentElement('afterend',statusMessage);
         const formData = new FormData(form);
-
-        // const object = {};
-        // formData.forEach((item,i)=>{
-        //     object[i] = item;
-        // }); // just rewriting
         const json = JSON.stringify(Object.fromEntries(formData.entries())); // syntax is a bit different
-        // const obj = {a: 23, b: 50}; // just a silly example
-        // console.log(Object.entries(obj)) //[['a', 23], ['b', 50]]
 
-        // const json = JSON.stringify(object);
-        // fetch('server.php', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-type': 'application/json'
-        //     },
-        //     body: json
-        // }) // this part i have rewrited in function postData  
         postData('http://localhost:3000/requests', json)
-        // postData('server.php', JSON.stringify(object))
-        //  http://localhost:3000/requests instead of 'server.php'
-        // .then(data=> data.text()) - we don't need it anymore
         .then(data=>{
             console.log(data);
             showThanksModal(message.success);
@@ -325,7 +265,7 @@ function bindPostData(form){
 function showThanksModal(message){
     const prevModalDialog = document.querySelector('.modal__dialog');
     prevModalDialog.classList.add('hide');
-    modalOpen();
+    (0,_modal__WEBPACK_IMPORTED_MODULE_0__.modalOpen)('.modal', modalShowUp); // +
     const thanksModal = document.createElement('div');
     thanksModal.classList.add('modal__dialog');
     thanksModal.innerHTML = `
@@ -335,31 +275,104 @@ function showThanksModal(message){
     </div>
     `;
     document.querySelector('.modal').append(thanksModal); 
-    //modal.append(thanksModal); // m version
     setTimeout(()=> {
         thanksModal.remove();
         prevModalDialog.classList.add('show');
         prevModalDialog.classList.remove('hide');
-        modalClose();
+        (0,_modal__WEBPACK_IMPORTED_MODULE_0__.modalClose)('.modal'); // +
     },2000);
 }
 
-// fetch('db.json',)
-// .then(data => data.json())
-// .then(res => console.log(res));
-
-
 // fetch('http://localhost:3000/menu',)
-fetch('db.json')  // ЭРРОР!!
+fetch('db.json') 
 .then(data => data.json())
 .then(res => console.log(res));
 }
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (form);
+
+/***/ }),
+
+/***/ "./js/modules/modal.js":
+/*!*****************************!*\
+  !*** ./js/modules/modal.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "modalOpen": () => (/* binding */ modalOpen),
+/* harmony export */   "modalClose": () => (/* binding */ modalClose)
+/* harmony export */ });
+
+        function modalOpen(modalSelector, modalShowUp){
+            const modal = document.querySelector(modalSelector);
+            modal.classList.add('show');
+            modal.classList.remove('hide');
+            document.body.style.overflow = 'hidden';
+
+            console.log(modalShowUp)
+            if(modalShowUp){
+                clearInterval(modalShowUp) //+
+            }
+            
+        }
+        
+        function modalClose(modalSelector){
+            const modal = document.querySelector(modalSelector);
+            modal.classList.add('hide');
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
 
 
 
+function modal(triggerSelector, modalSelector, modalShowUp){
+  
+        const btns = document.querySelectorAll(triggerSelector); //+
+        const modal = document.querySelector(modalSelector); //+ 
 
-// module.exports = modal;
+        // function modalOpen(){
+        //     modal.classList.add('show');
+        //     modal.classList.remove('hide');
+        //     document.body.style.overflow = 'hidden';
+        //     clearInterval(modalShowUp)
+        // }
+        
+        // function modalClose(){
+        //     modal.classList.add('hide');
+        //     modal.classList.remove('show');
+        //     document.body.style.overflow = '';
+        // }
+        btns.forEach(btn=>{
+            btn.addEventListener('click',()=>modalOpen(modalSelector, modalShowUp))
+        });
+
+        modal.addEventListener('click',(e)=>{
+                if(e.target.classList.contains('modal') || e.target.classList.contains('modal__close')){  
+                modalClose(modalSelector)
+            }
+        })
+        document.addEventListener('keydown',(e)=>{
+            if(e.code === 'Escape'){
+                modalClose(modalSelector)
+            }
+        });
+        // const modalShowUp = setTimeout(modalOpen, 9000);
+        // const modalShowUp = setTimeout(()=>modalOpen(modalSelector), 9000);
+        window.addEventListener('scroll', endScrollShowUp);
+        function endScrollShowUp(){
+            if(window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight){
+                modalOpen(modalSelector, modalShowUp);
+                window.removeEventListener('scroll', endScrollShowUp);
+            }
+        }
+}
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);
+
+
+
 
 /***/ }),
 
@@ -610,6 +623,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_cards__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/cards */ "./js/modules/cards.js");
 /* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/timer */ "./js/modules/timer.js");
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/modal */ "./js/modules/modal.js");
+/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/form */ "./js/modules/form.js");
 
 
  // no need to write './modules/tabs.js'
@@ -619,14 +633,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 document.addEventListener('DOMContentLoaded', ()=>{
+
+    const modalShowUp = setTimeout(()=> (0,_modules_modal__WEBPACK_IMPORTED_MODULE_5__.modalOpen)('.modal', modalShowUp), 9000);
 
         (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])();
         (0,_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])();
         (0,_modules_calculator__WEBPACK_IMPORTED_MODULE_2__["default"])();
         (0,_modules_cards__WEBPACK_IMPORTED_MODULE_3__["default"])();
         (0,_modules_timer__WEBPACK_IMPORTED_MODULE_4__["default"])();
-        (0,_modules_modal__WEBPACK_IMPORTED_MODULE_5__["default"])();
+        (0,_modules_modal__WEBPACK_IMPORTED_MODULE_5__["default"])('[data-modal]', '.modal', modalShowUp);
+        (0,_modules_form__WEBPACK_IMPORTED_MODULE_6__["default"])('form',modalShowUp);
 
 });
 })();
