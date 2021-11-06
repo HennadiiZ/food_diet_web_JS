@@ -5,7 +5,7 @@ tabs, slider, calculator, cards, timer, modal, posting forms.
 
 (MAMP, JsonServer, package.json, package-lock.json,node_modules, .gitignore, webpack)
 
-json, ajax, fetch, promise, async/await, destructuring, delegation, local storage, reg exp, modules (Common.js) etc.
+json, ajax, fetch, promise, async/await, destructuring, delegation, local storage, reg exp, modules(Common.js), modules(ES6) etc.
 
 
  https://hennadiiz.github.io/food_diet_web_JS/
